@@ -1,33 +1,20 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Data;
+using System.Security.Cryptography.X509Certificates;
+using Payments;
 
 class Program
 {
     static void Main(string[] args){
-        var pagamento = new PagamentoCartao();
-        pagamento.Pagar("123");
+        var payment = new Payment();
     }
 }
 
 
-
-public class Pagamento
-{
-    //metodo constutor
-    public Pagamento()
+    public class Pagamento
     {
-        Console.WriteLine("Iniciando Pagamento");
+        //Garbage Collector
+        public Pagamento()
+        {
+            Console.WriteLine("Iniciando o Pagamento");
+        }
     }
-    public virtual void Pagar(string numero)
-    {
-        Console.WriteLine("Pagar");
-    }
-}
-
-public class PagamentoCartao : Pagamento
-{
-    public override void Pagar(string numero)
-    {
-        base.Pagar(numero);
-        Console.WriteLine("Cartão pago ");
-    }
-}
