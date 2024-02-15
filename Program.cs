@@ -1,20 +1,25 @@
 ﻿using System.Data;
 using System.Security.Cryptography.X509Certificates;
-using Payments;
 
 class Program
 {
     static void Main(string[] args){
-        var payment = new Payment();
     }
-}
 
-
-    public class Pagamento
+    public class Pagamento : IPagamento
     {
-        //Garbage Collector
-        public Pagamento()
+        public DateTime Vencimento { get; set; }
+
+        public void Pagar(double valor)
         {
-            Console.WriteLine("Iniciando o Pagamento");
+            
         }
     }
+
+    public interface IPagamento
+    {
+        DateTime Vencimento { get; set; }
+
+        void Pagar(double valor);
+    }
+};
