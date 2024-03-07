@@ -37,9 +37,9 @@ namespace Balta
 
             var carrers = new List<Career>();
             var carrerDotNet = new Career("Especialista DotNet","carreira-DotNet");
-            var carrerItem = new CareerItem(1,"Fundamentos CSharp", "", null);
-            var carrerItem3 = new CareerItem(3,"Modulo Programer", "", null);
-            var carrerItem2 = new CareerItem(2,"Aprenda OOp", "", null);
+            var carrerItem = new CareerItem(1,"Fundamentos CSharp", "", courseCsharp);
+            var carrerItem3 = new CareerItem(3,"Modulo Programer", "", courseAspNet);
+            var carrerItem2 = new CareerItem(2,"Aprenda OOp", "", courseoop);
             carrerDotNet.Items.Add(carrerItem);
             carrerDotNet.Items.Add(carrerItem2);
             carrerDotNet.Items.Add(carrerItem3);
@@ -48,10 +48,12 @@ namespace Balta
             foreach (var carrer in carrers)
             {
                 Console.WriteLine("Titulo: "+carrer.Title);
-                foreach (var item in carrer.Items.OrderBy(x => x.Order))
+                foreach (var item in carrer.Items.OrderBy(x => x.Ordem))
                 {
                     Console.WriteLine(item.Ordem + " - " + item.Title);
-                    
+                    Console.WriteLine(item.Course.Title);
+                    Console.WriteLine(item.Course.Level);
+
                 }
             }
         }

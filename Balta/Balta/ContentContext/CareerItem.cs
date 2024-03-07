@@ -4,6 +4,10 @@ namespace Balta.ContentContext
     {
         public CareerItem(int ordem, string title, string description, Course course)
         {
+            if (course == null)
+            {
+                throw new System.Exception("O curso não pode ser nulo");
+            }
             Ordem = ordem;
             Title = title;
             Description = description;
